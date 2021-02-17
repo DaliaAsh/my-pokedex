@@ -2,6 +2,10 @@
 
 while playing this game I learned a lot of git commands like :
 
+## git --version
+
+to know the git version you install
+
 ## git init
 
 used to initialize a folder as git repository
@@ -31,6 +35,14 @@ to list all branches in the remote and local
 to add a remote on your repository
 
 also I learned the difference between tag and branch
+
+## git diff branch1 branch2
+
+to get the differences between two branches
+
+## git pull
+
+to move changes from remote to local = git fetch + git merge
 
 # Branch vs Tag
 
