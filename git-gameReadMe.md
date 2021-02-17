@@ -1,3 +1,25 @@
+# Four Git Areas :
+
+Working Area is the place where you store your files
+
+Repository (this is why you use git in the first place)
+It contains the history of your project
+When you commit stuff it goes to the repository
+
+Between Working Area and Repository Area , their is Index Area (here you put your files before the comitte)
+
+Temporary Storage called Stash (not as important as the other three , but it is useful)
+
+The two important areas are :
+
+Working Area and Repository Areas
+
+Working Area is the project directory of your file system
+this is where you work , test your files and so on
+
+The Repository is in the .git folder
+The most important directory is the one exist in the objects database
+
 # Git Game FeedBack
 
 while playing this game I learned a lot of git commands like :
