@@ -10,18 +10,155 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap"
     />
     <link
-      type="text/css"
       rel="stylesheet"
-      href="./css/materialize.css"
-      media="screen,projection"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
   </head>
-  <body class="light-blue accent-1" onload="fetchPokemons()">
-    <div>
-      <h1 class="white-text center">Pokedex</h1>
+  <body class="black">
+    <header class="black">
+      <img src="./assets/splat.png" width="70" height="50" />
+    </header>
+    <div class="center-align black">
+      <h1 class="center-align" style="color: #33b2e5">Pokedex</h1>
+
+      <div style="display: flex; justify-content: center; align-items: center">
+        <div>
+          <input
+            class="validate white"
+            placeholder="Search"
+            style="
+              padding-right: 10%;
+              border-radius: 1em;
+              padding-left: 1em;
+              margin-left: -7%;
+            "
+          />
+        </div>
+      </div>
+      <div
+        id="container"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+        "
+      ></div>
     </div>
+    <div class="white">
+      <div style="margin-left: 15%; padding-top: 5%; display: flex">
+        <img src="./assets/pokemon.jpg" width="100" height="100" />
+        <h3>Tools</h3>
+      </div>
+      <h5 style="margin-left: 15%">
+        This landing page is built using the best tools
+      </h5>
+      <div class="center">
+        <img
+          src="./assets/matcss.png"
+          width="150"
+          height="150"
+          style="margin: 2em"
+        />
+        <img
+          src="./assets/html.png"
+          width="150"
+          height="150"
+          style="margin: 2em"
+        />
+        <img
+          src="./assets/javascript.png"
+          width="150"
+          height="150"
+          style="margin: 2em"
+        />
+        <img
+          src="./assets/css.png"
+          width="150"
+          height="150"
+          style="margin: 2em"
+        />
+      </div>
+    </div>
+    <footer
+      style="display: flex; flex-wrap: wrap; justify-content: center"
+      class="black"
+    >
+      <div style="padding: 2em">
+        <h6
+          class="white-text"
+          style="
+            border-bottom: 1px solid #33b2e5;
+            width: 90%;
+            padding-bottom: 0.5em;
+          "
+        >
+          ABOUT US
+        </h6>
+        <div
+          class="white-text"
+          style="width: 25em; padding-top: 1em; letter-spacing: 0.1em"
+        >
+          This Website Will Help You Navigate between Pokemons , It will fetch
+          the pokemons from an API and you will get chance to search them
+        </div>
+      </div>
+      <div style="padding: 2em">
+        <h6
+          class="white-text"
+          style="
+            border-bottom: 1px solid #33b2e5;
+            width: 90%;
+            padding-bottom: 0.5em;
+          "
+        >
+          CONTACT US
+        </h6>
+        <ul class="white-text" style="width: 25em; padding-top: 0.5em">
+          <li style="margin-top: 0.2em; display: flex; align-items: center">
+            <i class="material-icons" style="margin-right: 0.2em"
+              >local_phone</i
+            >
+            <span>+970595280274</span>
+          </li>
+          <li style="margin-top: 0.2em; display: flex; align-items: center">
+            <i class="material-icons" style="margin-right: 0.2em"
+              >location_on</i
+            >
+            <span>Tulkarm ,Palestine</span>
+          </li>
+          <li style="margin-top: 0.2em; display: flex; align-items: center">
+            <i class="material-icons" style="margin-right: 0.2em">email</i>
+            <span>dalia@kiitos-tech.com</span>
+          </li>
+        </ul>
+      </div>
+      <div style="padding: 2em">
+        <h6
+          class="white-text"
+          style="
+            border-bottom: 1px solid #33b2e5;
+            width: 90%;
+            padding-bottom: 0.5em;
+          "
+        >
+          OUR MISSION
+        </h6>
+        <div class="white-text" style="width: 25em; padding-top: 1em">
+          Building Simple , User Friendly Websites
+        </div>
+      </div>
+      <div class="white-text" style="margin: auto; padding: 2em">
+        Copyright 2021 Dalia Ashayer
+      </div>
+    </footer>
     <script src="./js/materialize.js" type="text/javascript"></script>
     <script src="./js/fetchPokemons.js" type="text/javascript"></script>
     <script src="./js/renderPokemons.js" type="text/javascript"></script>
+    <script src="./js/searchPokemons.js" type="text/javascript"></script>
   </body>
 </html>
