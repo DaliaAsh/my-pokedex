@@ -16,8 +16,14 @@ Being Growth Mindset makes huge impact on being professional because it helps wh
 
 ## What is 1 practical way of practicing this concept to improve yourself?
 
+When I receive my feedback at work in the future , I will accept it whether ii is positive one or negative and focus on the negative aspects and improve them .
+
 # Business Awareness
 
 ## How would you describe Kiitos’ company culture?
 
+Positive curious-minded Work Culture where everyone can give his or her opinion , encourages learning also it gives me the chance to know people from different cultures .
+
 ## How does Kiitos make money?
+
+via Software development like Mobile Development and Full-stack web development, Empowering people
