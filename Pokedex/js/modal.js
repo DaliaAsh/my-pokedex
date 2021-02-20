@@ -3,7 +3,6 @@ function openModal(id) {
   const instance = M.Modal.init(elem, { dismissible: true });
   configureModal(id);
   instance.open();
-  savePokemon(id);
 }
 async function configureModal(id) {
   const pokemon = await fetchPokemon(id);
@@ -11,7 +10,9 @@ async function configureModal(id) {
   document.getElementById("details").innerHTML = `
     <div class="modal-content ${
       pokemon.species.color.name === "white" ? "black" : "white"
-    }">
+    }" style="color:${
+    pokemon.species.color.name === "white" ? "white" : "black"
+  }">
     <div style="display:flex;width:50%">
     <div class="centered">
     <img src="${pokemon.frontImageUrl}" width="300" height="300"/>
@@ -19,9 +20,13 @@ async function configureModal(id) {
     pokemon.species.flavor_text_entries[0].flavor_text
   }</h6>
     </div>
-    <div style="border-left:1px solid black;padding-left:5em;width:100%">
+    <div style="border-left:${
+      pokemon.species.color.name === "white"
+        ? "1px solid white"
+        : "1px solid black"
+    };padding-left:5em;width:100%">
       <h4 style="color:${
-        pokemon.species.color.name
+        pokemon.species.color.name === "white" ? "white" : "black"
       }">${pokemon.name.toUpperCase()}</h4>
     <h6 style="text-transform:capitalize">
     <i class="material-icons ${pokemon.species.color.name}-text">show_chart</i>

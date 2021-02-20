@@ -3,6 +3,7 @@ async function fetchPokemon(id) {
   const pokemon = await result.json();
   const pokemonSpeciesRequest = await fetch(pokemon.species.url);
   const pokemonSpecies = await pokemonSpeciesRequest.json();
+  console.log(pokemon);
   return {
     name: pokemon.name,
     backImageUrl: pokemon.sprites.back_default,

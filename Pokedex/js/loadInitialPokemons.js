@@ -13,8 +13,9 @@ async function loadInitialPokemons() {
   renderInitialPokemons(localStorage.getItem("initialPokemons"));
 }
 function renderInitialPokemons(pokemonsString) {
-  const pokemonsArray = JSON.parse(pokemonsString);
+  let pokemonsArray = JSON.parse(pokemonsString);
   console.log(pokemonsArray);
+  pokemonsArray = sortPokemons(pokemonsArray);
   const seenPokemons = localStorage.getItem("seen");
   const caughtPokemons = localStorage.getItem("caught");
   let seenPokemonsArray = [];
@@ -29,7 +30,7 @@ function renderInitialPokemons(pokemonsString) {
   pokemonsArray.map((pokemon) => {
     const isSeen = seenPokemonsArray.includes(pokemon.id);
     const isCaught = caughtPokemonsArray.includes(pokemon.id);
-    pokemonsHtml += `<div class="card" style="margin:2em;background-color:${
+    pokemonsHtml += `<div class="card initial-pokemon" style="margin:2em;background-color:${
       pokemon.species.color.name
     }">
     <div class="card-image"> <img alt="${pokemon.name}" src="${

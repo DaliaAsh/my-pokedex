@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap"
     />
+    <link rel="stylesheet" href="./fonts/Pokemon Solid.ttf" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -17,15 +18,37 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
+    <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/animate.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
   </head>
-  <body class="white" onload="loadInitialPokemons()">
+  <body onload="loadInitialPokemons()">
     <div id="details" class="modal"></div>
-    <header class="white">
-      <img src="./assets/splat.png" width="70" height="50" />
+    <header class="header-container black">
+      <div class="header-child">
+        <div>
+          <h1 class="header-text">Pokedex</h1>
+          <h5 class="header-text">
+            Pokémon is a series of video games developed by Game Freak and
+            published by Nintendo and The Pokémon Company under the Pokémon
+            media fra
+          </h5>
+          <a
+            class="waves-effect waves-light btn white-text discover-button"
+            href="#container"
+            >Discover Pokemons</a
+          >
+        </div>
+
+        <img
+          src="./assets/pokedex.jpg"
+          width="50%"
+          height="100%"
+          id="pokemon-image"
+        />
+      </div>
     </header>
-    <div class="center-align">
-      <h1 class="center-align header" style="color: #33b2e5">Pokedex</h1>
+    <section class="center-align black">
       <div
         id="container"
         style="
@@ -35,14 +58,14 @@
           align-items: center;
         "
       ></div>
-    </div>
+    </section>
     <div class="white">
       <div style="margin-left: 15%; padding-top: 5%; display: flex">
         <img src="./assets/pokemon.jpg" width="100" height="100" />
         <h3>Pokemons</h3>
       </div>
-      <div style="display: flex; align-items: center; flex-wrap: wrap">
-        <div class="input-field" style="width: 25em; margin-left: 20%">
+      <div style="display: flex; align-items: center; flex-direction: column">
+        <div class="input-field" style="width: 60%">
           <i class="material-icons prefix">search</i>
           <input
             id="search-input"
@@ -70,7 +93,7 @@
         style="display: flex; flex-wrap: wrap; justify-content: center"
       ></div>
     </div>
-    <div class="black" style="width: 100%">
+    <div class="black Tools" style="width: 100%">
       <div style="margin-left: 15%; padding-top: 5%; display: flex">
         <h3 class="white-text">Tools</h3>
       </div>
@@ -104,10 +127,7 @@
         />
       </div>
     </div>
-    <footer
-      style="display: flex; flex-wrap: wrap; justify-content: center"
-      class="black"
-    >
+    <footer class="black footer">
       <div style="padding: 2em">
         <h6
           class="white-text"

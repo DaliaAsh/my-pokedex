@@ -5,40 +5,22 @@
   cursor: pointer;
   background-color: white;
   color: #33b2e5;
+  font-family: Montserrat;
 }
 .pokemon {
   text-transform: capitalize;
   width: 5em;
-  animation: fade ease-in 1s forwards;
   color: white;
+  font-family: Montserrat;
 }
 .pokemon-title {
   font-weight: 900;
-}
-.closed {
-  animation: slide-out 0.5s ease-in forwards;
-  z-index: 0;
-}
-.opened {
-  animation: slide 0.5s ease-in forwards;
-  z-index: 1;
 }
 .done-icon:hover {
   cursor: pointer;
 }
 .eye-icon:hover {
   cursor: pointer;
-}
-#modal {
-  width: 70%;
-  height: 20em;
-  position: fixed;
-  top: 20em;
-  left: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 @keyframes fade {
   0% {
@@ -58,10 +40,6 @@
   0% {
     transform: translateY(-80%);
     opacity: 0;
-  }
-  50% {
-    transform: translateY(10%);
-    opacity: 0.5;
   }
   100% {
     transform: translateY(0);

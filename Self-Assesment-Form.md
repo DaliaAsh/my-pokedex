@@ -12,4 +12,12 @@ I think that practising is the most effective way to improve my technical skills
 
 ## How can this week’s concept ( Growth Mindset ) help you be a better professional?
 
-Being Growth Mindset makes us believing that everything is possible
+Being Growth Mindset makes huge impact on being professional because it helps when facing problems during the work , growth mindset people will not get frustrated easily instead they look at these problems as challenges and in this way the problems will be solved faster .Also in terms of enhancing the quality of the work , Growth Mindset people will keep learning and see the learn process continuous and not limited by age .
+
+## What is 1 practical way of practicing this concept to improve yourself?
+
+# Business Awareness
+
+## How would you describe Kiitos’ company culture?
+
+## How does Kiitos make money?
