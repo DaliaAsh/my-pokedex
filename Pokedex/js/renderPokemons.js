@@ -17,16 +17,19 @@ function transformPokemonsToCards(pokemonsArray) {
   });
   console.log(sortedPokemons);
   sortedPokemons.map((pokemon, index) => {
-    html += `<div class="card pokemon pokemon-title" style="margin:2em;width:18em" onclick="openModal(${
-      pokemon.id
-    })">
+    html += `<div class="card pokemon pokemon-title" style="margin:2em;width:18em;padding-bottom:2em;background-color:${
+      pokemon.species.color.name
+    }">
     <h5>${index + 1}</h5>
-    <h4 class="card-title">${pokemon.name}</h4>
+    <h4 class="card-title"><strong>${pokemon.name}</strong></h4>
     <div>
     <img alt="${pokemon.name}" src="${
       pokemon.frontImageUrl
     }" width="150" height="150"/>
     </div>
+      <a class="waves-effect waves-light btn modal-trigger pink" href="#details" onclick="openModal(${
+        pokemon.id
+      })">View Details</a>
     </div>`;
   });
   document.getElementById("container").innerHTML = html;

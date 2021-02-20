@@ -7,11 +7,10 @@
   color: #33b2e5;
 }
 .pokemon {
-  background-color: #33b2e5;
-  color: white;
   text-transform: capitalize;
-  width: 15em;
+  width: 5em;
   animation: fade ease-in 1s forwards;
+  color: white;
 }
 .pokemon-title {
   font-weight: 900;
@@ -23,6 +22,12 @@
 .opened {
   animation: slide 0.5s ease-in forwards;
   z-index: 1;
+}
+.done-icon:hover {
+  cursor: pointer;
+}
+.eye-icon:hover {
+  cursor: pointer;
 }
 #modal {
   width: 70%;
