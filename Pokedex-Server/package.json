@@ -1,0 +1,20 @@
+{
+  "name": "pokedex-server",
+  "version": "1.0.0",
+  "description": "This backend server for the pokedex application built in TAP Accelartion Program week 1 ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://DaliaAsh@bitbucket.org/kiitos/tap-cohort-1.git"
+  },
+  "author": "Dalia Ashayer",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/kiitos/tap-cohort-1#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
