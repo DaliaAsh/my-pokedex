@@ -4,12 +4,15 @@ const router = express.Router();
 router.get("/", (req, res, next) => {
   fs.readFile("./data/pokemons.json", null, (err, data) => {
     if (err) {
-      console.log(err);
+      res.status(500).json({
+        ErrorMessage: err,
+      });
+      return;
     }
-    console.table(data);
-  });
-  res.status(200).json({
-    message: "Handling GET Request to pokemons",
+    res.status(200).json({
+      message: "Handling GET Request to pokemons",
+      pokemons: JSON.parse(data),
+    });
   });
 });
 router.post("/", (req, res, next) => {
@@ -18,10 +21,22 @@ router.post("/", (req, res, next) => {
   });
 });
 router.get("/:id", (req, res, next) => {
-  const id = req.params.id;
-  res.status(200).json({
-    message: "Handling GET Request for one id",
-    id: id,
+  fs.readFile("./data/pokemons.json", null, (err, data) => {
+    if (err) {
+      res.status(500).json({
+        ErrorMessage: err,
+      });
+      return;
+    }
+    const pokemonsArray = JSON.parse(data);
+    const id = req.params.id;
+    const pokemon = pokemonsArray.filter((pokemon) => {
+      return +id === pokemon.id;
+    });
+    res.status(200).json({
+      message: "Handling GET Request to one pokemon",
+      pokemon: pokemon,
+    });
   });
 });
 module.exports = router;
