@@ -1,0 +1,9 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: Montserrat;
+}
+.Tools {
+  font-family: Montserrat;
+}

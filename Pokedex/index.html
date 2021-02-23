@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex App</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap"
+    />
+    <link rel="stylesheet" href="./fonts/Pokemon Solid.ttf" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/animate.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+  </head>
+  <body onload="loadInitialPokemons()">
+    <div id="details" class="modal"></div>
+    <header class="header-container black">
+      <div class="header-child">
+        <div>
+          <h1 class="header-text">Pokedex</h1>
+          <h5 class="header-text">
+            Pokémon is a series of video games developed by Game Freak and
+            published by Nintendo and The Pokémon Company under the Pokémon
+            media fra
+          </h5>
+          <a
+            class="waves-effect waves-light btn white-text discover-button"
+            href="#container"
+            >Discover Pokemons</a
+          >
+        </div>
+
+        <img
+          src="./assets/pokedex.jpg"
+          width="50%"
+          height="100%"
+          id="pokemon-image"
+        />
+      </div>
+    </header>
+    <section class="center-align black">
+      <div
+        id="container"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+        "
+      ></div>
+    </section>
+    <div class="white">
+      <div style="margin-left: 15%; padding-top: 5%; display: flex">
+        <img src="./assets/pokemon.jpg" width="100" height="100" />
+        <h3 class="header-text black-text">Pokemons</h3>
+      </div>
+      <div style="display: flex; align-items: center; flex-direction: column">
+        <div class="input-field" style="width: 60%">
+          <i class="material-icons prefix">search</i>
+          <input
+            id="search-input"
+            type="text"
+            class="validate"
+            oninput="searchPokemons()"
+            placeholder="Search"
+          />
+        </div>
+        <h6 style="margin-left: auto; margin-right: auto">
+          <span
+            class="green-text header-text"
+            style="border-right: 3px solid black; padding-right: 2em"
+            id="seen"
+          >
+          </span>
+
+          <span
+            style="padding-left: 2em"
+            id="caught"
+            class="red-text header-text"
+          ></span>
+        </h6>
+      </div>
+
+      <div
+        id="pokemons"
+        style="display: flex; flex-wrap: wrap; justify-content: center"
+      ></div>
+    </div>
+    <div class="black Tools" style="width: 100%">
+      <div style="margin-left: 15%; padding-top: 5%; display: flex">
+        <h3 class="white-text">Tools</h3>
+      </div>
+      <h5 class="white-text" style="margin-left: 15%">
+        This landing page is built using the best tools
+      </h5>
+      <div class="center">
+        <img
+          src="./assets/matcss.png"
+          width="150"
+          height="150"
+          style="margin: 2em"
+        />
+        <img
+          src="./assets/html.png"
+          width="150"
+          height="150"
+          style="margin: 2em"
+        />
+        <img
+          src="./assets/javascript.png"
+          width="150"
+          height="150"
+          style="margin: 2em"
+        />
+        <img
+          src="./assets/css.png"
+          width="150"
+          height="150"
+          style="margin: 2em"
+        />
+      </div>
+    </div>
+    <footer class="black footer">
+      <div style="padding: 2em">
+        <h6
+          class="white-text"
+          style="
+            border-bottom: 1px solid #33b2e5;
+            width: 90%;
+            padding-bottom: 0.5em;
+          "
+        >
+          ABOUT US
+        </h6>
+        <div
+          class="white-text"
+          style="width: 25em; padding-top: 1em; letter-spacing: 0.1em"
+        >
+          This Website Will Help You Navigate between Pokemons , It will fetch
+          the pokemons from an API and you will get chance to search them
+        </div>
+      </div>
+      <div style="padding: 2em">
+        <h6
+          class="white-text"
+          style="
+            border-bottom: 1px solid #33b2e5;
+            width: 90%;
+            padding-bottom: 0.5em;
+          "
+        >
+          CONTACT US
+        </h6>
+        <ul class="white-text" style="width: 25em; padding-top: 0.5em">
+          <li style="margin-top: 0.2em; display: flex; align-items: center">
+            <i class="material-icons" style="margin-right: 0.2em"
+              >local_phone</i
+            >
+            <span>+970595280274</span>
+          </li>
+          <li style="margin-top: 0.2em; display: flex; align-items: center">
+            <i class="material-icons" style="margin-right: 0.2em"
+              >location_on</i
+            >
+            <span>Tulkarm ,Palestine</span>
+          </li>
+          <li style="margin-top: 0.2em; display: flex; align-items: center">
+            <i class="material-icons" style="margin-right: 0.2em">email</i>
+            <span>dalia@kiitos-tech.com</span>
+          </li>
+        </ul>
+      </div>
+      <div style="padding: 2em">
+        <h6
+          class="white-text"
+          style="
+            border-bottom: 1px solid #33b2e5;
+            width: 90%;
+            padding-bottom: 0.5em;
+          "
+        >
+          OUR MISSION
+        </h6>
+        <div class="white-text" style="width: 25em; padding-top: 1em">
+          Building Simple , User Friendly Websites
+        </div>
+      </div>
+      <div
+        class="white-text"
+        style="margin: auto; padding: 2em; display: flex; align-items: center"
+      >
+        <i class="material-icons">copyright</i> Copyright 2021 Dalia Ashayer
+      </div>
+    </footer>
+    <script src="./js/materialize.js" type="text/javascript"></script>
+    <script src="./js/fetchPokemons.js" type="text/javascript"></script>
+    <script src="./js/renderPokemons.js" type="text/javascript"></script>
+    <script src="./js/searchPokemons.js" type="text/javascript"></script>
+    <script src="./js/modal.js" type="text/javascript"></script>
+    <script src="./js/loadInitialPokemons.js" type="text/javascript"></script>
+    <script src="./js/pokeomnAction.js" type="text/javascript"></script>
+  </body>
+</html>

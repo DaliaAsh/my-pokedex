@@ -1,0 +1,62 @@
+.header {
+  animation: fade ease-in 1s forwards;
+}
+.pokemon:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #33b2e5;
+  font-family: Montserrat;
+}
+.pokemon {
+  text-transform: capitalize;
+  width: 5em;
+  color: white;
+  font-family: Montserrat;
+}
+.pokemon-title {
+  font-weight: 900;
+}
+.done-icon:hover {
+  cursor: pointer;
+}
+.eye-icon:hover {
+  cursor: pointer;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(-40%);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translateY(-80%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-out {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
