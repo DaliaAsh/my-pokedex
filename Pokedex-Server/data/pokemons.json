@@ -17392,5 +17392,27 @@
             "Speed": 34
         },
         "image": "https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/809.png"
+    },
+    {
+        "id": 788888,
+        "name": {
+            "english": "Bulbasaur",
+            "japanese": "フシギダネ",
+            "chinese": "妙蛙种子",
+            "french": "Bulbizarre"
+        },
+        "type": [
+            "Grass",
+            "Poison"
+        ],
+        "base": {
+            "HP": 45,
+            "Attack": 49,
+            "Defense": 49,
+            "Sp. Attack": 65,
+            "Sp. Defense": 65,
+            "Speed": 45
+        },
+        "image": "https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/001.png"
     }
 ]

@@ -16,8 +16,45 @@ router.get("/", (req, res, next) => {
   });
 });
 router.post("/", (req, res, next) => {
-  res.status(200).json({
-    message: "Handling POST Request to pokemons",
+  console.log(req.body);
+  fs.readFile("./data/pokemons.json", null, (err, data) => {
+    if (err) {
+      res.status(500).json({
+        ErrorMessage: err,
+      });
+      return;
+    }
+    let pokemons = JSON.parse(data);
+    const pokemonId = req.body.id;
+    const pokemon = pokemons.find((pokemon) => {
+      return pokemon.id === pokemonId;
+    });
+    if (pokemon !== undefined) {
+      res.status(500).json({
+        message: "The id already exist , try another one",
+      });
+      return;
+    }
+    const newPokemon = {
+      id: pokemonId,
+      name: req.body.name,
+      type: req.body.type,
+      base: req.body.base,
+      image: req.body.image,
+    };
+    pokemons.push(newPokemon);
+    fs.writeFile("./data/pokemons.json", JSON.stringify(pokemons), (err) => {
+      if (err) {
+        res.status(500).json({
+          message: err.message,
+        });
+        return;
+      }
+      res.status(200).json({
+        message: "Handling Post Request to pokemons",
+        addedPokemon: newPokemon,
+      });
+    });
   });
 });
 router.get("/:id", (req, res, next) => {
@@ -33,6 +70,12 @@ router.get("/:id", (req, res, next) => {
     const pokemon = pokemonsArray.filter((pokemon) => {
       return +id === pokemon.id;
     });
+    if (pokemon.length === 0) {
+      res.status(500).json({
+        ErrorMessage: "Their is no matched id ",
+      });
+      return;
+    }
     res.status(200).json({
       message: "Handling GET Request to one pokemon",
       pokemon: pokemon,
