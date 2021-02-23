@@ -117,4 +117,49 @@ router.delete("/:id", (req, res, next) => {
     });
   });
 });
+router.put("/:id", (req, res, next) => {
+  const updatedProps = req.body;
+  fs.readFile("./data/pokemons.json", null, (err, data) => {
+    if (err) {
+      res.status(500).json({
+        ErrorMessage: err,
+      });
+      return;
+    }
+    let pokemons = JSON.parse(data);
+    const pokemonId = req.params.id;
+    const pokemonIndex = pokemons.findIndex((pokemon) => {
+      return pokemon.id === +pokemonId;
+    });
+    if (pokemonIndex === -1) {
+      res.status(500).json({
+        message: "The id does not exist , try again",
+      });
+      return;
+    }
+    const props = {};
+    for (let property of updatedProps) {
+      props[property.propName] = property.value;
+    }
+    console.log(props);
+    let updatedPokemon = pokemons[pokemonIndex];
+    for (const property in props) {
+      updatedPokemon[property] = props[property];
+    }
+    pokemons.splice(pokemonIndex, 1, updatedPokemon);
+    fs.writeFile("./data/pokemons.json", JSON.stringify(pokemons), (err) => {
+      if (err) {
+        res.status(500).json({
+          message: err.message,
+        });
+        return;
+      }
+      res.status(200).json({
+        message: "Handling Delete Request to pokemons",
+        updatedPokemon: updatedPokemon,
+      });
+    });
+  });
+});
+
 module.exports = router;
