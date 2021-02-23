@@ -82,4 +82,39 @@ router.get("/:id", (req, res, next) => {
     });
   });
 });
+router.delete("/:id", (req, res, next) => {
+  fs.readFile("./data/pokemons.json", null, (err, data) => {
+    if (err) {
+      res.status(500).json({
+        ErrorMessage: err,
+      });
+      return;
+    }
+    let pokemons = JSON.parse(data);
+    const pokemonId = req.params.id;
+    const pokemonIndex = pokemons.findIndex((pokemon) => {
+      return pokemon.id === +pokemonId;
+    });
+    console.log(pokemonIndex);
+    if (pokemonIndex === -1) {
+      res.status(500).json({
+        message: "The id does not exist , try again",
+      });
+      return;
+    }
+    pokemons.splice(pokemonIndex, 1);
+    fs.writeFile("./data/pokemons.json", JSON.stringify(pokemons), (err) => {
+      if (err) {
+        res.status(500).json({
+          message: err.message,
+        });
+        return;
+      }
+      res.status(200).json({
+        message: "Handling Delete Request to pokemons",
+        pokemonDeletedId: pokemonId,
+      });
+    });
+  });
+});
 module.exports = router;
