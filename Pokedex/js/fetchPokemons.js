@@ -1,15 +1,12 @@
 async function fetchPokemon(id) {
-  const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  const result = await fetch(
+    `https://boiled-sedate-patch.glitch.me/pokemons/${id}`
+  );
   const pokemon = await result.json();
-  const pokemonSpeciesRequest = await fetch(pokemon.species.url);
-  const pokemonSpecies = await pokemonSpeciesRequest.json();
-  console.log(pokemon);
+  console.log(pokemon.pokemon[0]);
+  const pokemonData = pokemon.pokemon[0];
   return {
-    name: pokemon.name,
-    backImageUrl: pokemon.sprites.back_default,
-    frontImageUrl: pokemon.sprites.front_default,
-    id: id,
-    species: pokemonSpecies,
+    name: pokemonData.name,
   };
 }
 async function fetchPokemons() {
