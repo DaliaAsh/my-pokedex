@@ -5,11 +5,15 @@ async function loadInitialPokemons() {
     return;
   }
   let pokemonsArray = [];
-  for (let i = 0; i < 100; i++) {
-    const pokemon = await fetchPokemon(i + 1);
-    pokemonsArray.push(pokemon);
-  }
-  localStorage.setItem("initialPokemons", JSON.stringify(pokemonsArray));
+
+  const getAllPokemonsRequest = await fetch(
+    "https://boiled-sedate-patch.glitch.me/pokemons"
+  );
+  const resolvedPokemons = await getAllPokemonsRequest.json();
+  localStorage.setItem(
+    "initialPokemons",
+    JSON.stringify(resolvedPokemons.pokemons)
+  );
   renderInitialPokemons(localStorage.getItem("initialPokemons"));
 }
 function renderInitialPokemons(pokemonsString) {
@@ -30,14 +34,12 @@ function renderInitialPokemons(pokemonsString) {
   pokemonsArray.map((pokemon) => {
     const isSeen = seenPokemonsArray.includes(pokemon.id);
     const isCaught = caughtPokemonsArray.includes(pokemon.id);
-    pokemonsHtml += `<div class="card initial-pokemon" style="margin:2em;background-color:${
-      pokemon.species.color.name
-    }">
-    <div class="card-image"> <img alt="${pokemon.name}" src="${
-      pokemon.frontImageUrl
+    pokemonsHtml += `<div class="card initial-pokemon" style="margin:2em;background-color:rgb(${getRandomNumber()},${getRandomNumber()},${getRandomNumber()})">
+    <div class="card-image"> <img alt="${pokemon.name.english}" src="${
+      pokemon.image
     }"/></div>
     <h6 class="center" style="text-transform:capitalize"><b>${
-      pokemon.name
+      pokemon.name.english
     }</b></h6>
   <div class="card-action white" style="display:flex;justify-content:space-between" >
   <i class="material-icons eye-icon ${
@@ -51,10 +53,13 @@ function renderInitialPokemons(pokemonsString) {
       pokemon.id
     }">done_all</i>
   </div>
-   <a class="waves-effect waves-light btn modal-trigger black" href="#details" onclick="openModal(${
+   <a class="waves-effect waves-light btn modal-trigger black view-details" href="#details" onclick="openModal(${
      pokemon.id
    })">View Details</a>
        </div>`;
   });
   document.getElementById("pokemons").innerHTML = pokemonsHtml;
+}
+function getRandomNumber() {
+  return Math.floor(Math.random() * Math.floor(255));
 }

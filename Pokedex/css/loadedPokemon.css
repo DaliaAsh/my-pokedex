@@ -1,0 +1,10 @@
+.view-details {
+  width: 100%;
+}
+#pokemons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+  overflow: auto;
+}

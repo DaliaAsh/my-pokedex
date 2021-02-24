@@ -28,6 +28,8 @@
 }
 .initial-pokemon {
   font-family: Montserrat;
+  width: 10em;
+  height: auto;
 }
 #pokemon-image {
   animation: fade ease-in 1s forwards;

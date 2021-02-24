@@ -1,0 +1,10 @@
+.custom-modal-image {
+  display: flex;
+  width: 50%;
+}
+.modal-custom-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}

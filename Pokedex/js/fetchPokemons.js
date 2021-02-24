@@ -7,6 +7,8 @@ async function fetchPokemon(id) {
   const pokemonData = pokemon.pokemon[0];
   return {
     name: pokemonData.name,
+    id: pokemonData.id,
+    image: pokemonData.image,
   };
 }
 async function fetchPokemons() {

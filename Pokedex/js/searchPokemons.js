@@ -5,7 +5,9 @@ function searchPokemons() {
   if (pokemons) {
     const pokemonsArray = JSON.parse(pokemons);
     const filteredPokemonsArray = pokemonsArray.filter((pokemon) => {
-      return pokemon.name.toUpperCase().startsWith(searchQuery.toUpperCase());
+      return pokemon.name.english
+        .toUpperCase()
+        .startsWith(searchQuery.toUpperCase());
     });
     console.log(filteredPokemonsArray);
     renderInitialPokemons(JSON.stringify(filteredPokemonsArray));

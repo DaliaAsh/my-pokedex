@@ -117,7 +117,7 @@ router.delete("/:id", (req, res, next) => {
     });
   });
 });
-router.put("/:id", (req, res, next) => {
+router.patch("/:id", (req, res, next) => {
   const updatedProps = req.body;
   fs.readFile("./data/pokemons.json", null, (err, data) => {
     if (err) {
