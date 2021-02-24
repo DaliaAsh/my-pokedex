@@ -4,16 +4,12 @@ async function loadInitialPokemons() {
     renderInitialPokemons(pokemons);
     return;
   }
-  let pokemonsArray = [];
-
   const getAllPokemonsRequest = await fetch(
     "https://boiled-sedate-patch.glitch.me/pokemons"
   );
   const resolvedPokemons = await getAllPokemonsRequest.json();
-  localStorage.setItem(
-    "initialPokemons",
-    JSON.stringify(resolvedPokemons.pokemons)
-  );
+  const sortedPokemons = sortInitialPokemons(resolvedPokemons.pokemons);
+  localStorage.setItem("initialPokemons", JSON.stringify(sortedPokemons));
   renderInitialPokemons(localStorage.getItem("initialPokemons"));
 }
 function renderInitialPokemons(pokemonsString) {
@@ -62,4 +58,23 @@ function renderInitialPokemons(pokemonsString) {
 }
 function getRandomNumber() {
   return Math.floor(Math.random() * Math.floor(255));
+}
+function sortInitialPokemons(pokemonsArray) {
+  let pokemonsNames = [];
+  pokemonsArray.map((pokemon) => {
+    pokemonsNames.push(pokemon.name.english);
+  });
+  const oldPokemonsNames = [...pokemonsNames];
+  const sortedPokemonsNames = pokemonsNames.sort();
+  console.log(oldPokemonsNames);
+  console.log(sortedPokemonsNames);
+  const pokemonsIndecies = sortedPokemonsNames.map((pokemonName) => {
+    return oldPokemonsNames.indexOf(pokemonName);
+  });
+  console.log(pokemonsIndecies);
+  const sortedPokemons = pokemonsIndecies.map((pokemonIndex) => {
+    return pokemonsArray[pokemonIndex];
+  });
+  console.log(sortedPokemons);
+  return sortedPokemons;
 }

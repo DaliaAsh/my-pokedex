@@ -5,11 +5,7 @@ async function fetchPokemon(id) {
   const pokemon = await result.json();
   console.log(pokemon.pokemon[0]);
   const pokemonData = pokemon.pokemon[0];
-  return {
-    name: pokemonData.name,
-    id: pokemonData.id,
-    image: pokemonData.image,
-  };
+  return pokemonData;
 }
 async function fetchPokemons() {
   let arr = [];
