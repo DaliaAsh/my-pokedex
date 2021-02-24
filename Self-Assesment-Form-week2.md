@@ -7,14 +7,14 @@
 
 ## b. What are 2 benefits of using Postman?
 
-1 - We use Postman to send request to any backend server
+1 - We use Postman to send request to any backend server and view the response and the status of that response .
 2- In order to see if the server works well as it's supposed to do or not .
 
 # 2. Soft Skills
 
 ## a. How can this week’s concept ( Time management ) help you be a better professional?
 
-Increase the productivity in my career also make
+Increase the productivity in my career also when making prioritization to the tasks , it will help in enhancing the effectiveness of the team
 
 ## b. What’s your main source of procrastination and what’s 1 solution for it?
 

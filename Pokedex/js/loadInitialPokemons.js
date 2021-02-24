@@ -43,6 +43,10 @@ function renderInitialPokemons(pokemonsString) {
   }" onclick="markPokemonAsSeen(${pokemon.id})" id="seen${
       pokemon.id
     }">remove_red_eye</i>
+      <i class="material-icons delete-icon"
+      }" onclick="deletePokemonById(${pokemon.id})" id="delete${
+      pokemon.id
+    }">delete</i>
     <i class="material-icons  done-icon ${
       isCaught ? "red-text" : "black-text"
     }" onclick="markPokemonAsCaught(${pokemon.id})" id="caught${

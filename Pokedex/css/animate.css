@@ -1,27 +1,6 @@
 .header {
   animation: fade ease-in 1s forwards;
 }
-.pokemon:hover {
-  cursor: pointer;
-  background-color: white;
-  color: #33b2e5;
-  font-family: Montserrat;
-}
-.pokemon {
-  text-transform: capitalize;
-  width: 5em;
-  color: white;
-  font-family: Montserrat;
-}
-.pokemon-title {
-  font-weight: 900;
-}
-.done-icon:hover {
-  cursor: pointer;
-}
-.eye-icon:hover {
-  cursor: pointer;
-}
 @keyframes fade {
   0% {
     opacity: 0;

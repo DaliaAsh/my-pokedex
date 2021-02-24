@@ -42,3 +42,7 @@
 .eye-icon:hover {
   cursor: pointer;
 }
+.delete-icon:hover {
+  cursor: pointer;
+  color: red;
+}
