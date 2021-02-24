@@ -8,3 +8,29 @@
   flex-direction: row;
   width: 100%;
 }
+.base-pokemon {
+  display: flex;
+  margin: 1em;
+}
+.custom-progress-container {
+  height: 1.5em;
+  background-color: green;
+  width: 80%;
+  border-radius: 0.5em;
+  margin-left: 1em;
+}
+.custom-base-pokemon-value {
+  background-color: red;
+  height: 100%;
+  text-align: center;
+  border-radius: 0.5em;
+}
+.pokemon-type {
+  margin-left: 2em;
+}
+.base-pokemon-detail {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

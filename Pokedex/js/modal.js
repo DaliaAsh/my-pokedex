@@ -13,9 +13,9 @@ async function configureModal(id) {
   }
   let basePokemonHtml = "";
   basePokemonArray.map((basePokemon) => {
-    basePokemonHtml += `<div style="display:flex;margin:1em"><div><b>${basePokemon.base}</b></div>
-    <div style="height:1.5em;background-color:green;width:80%;border-radius:0.5em;margin-left:1em">
-    <div class="white-text" style="width:${basePokemon.value}%;background-color:red ;height:100%;text-align:center;border-radius:0.5em">${basePokemon.value}%</div>
+    basePokemonHtml += `<div class="base-pokemon"><div><b>${basePokemon.base}</b></div>
+    <div class="custom-progress-container">
+    <div class="white-text custom-base-pokemon-value" style="width:${basePokemon.value}%">${basePokemon.value}%</div>
     </div>
     </div>`;
   });
@@ -27,13 +27,12 @@ async function configureModal(id) {
     <img src="${pokemon.image}" width="100%" height="100%" />
     </div>
   </div>
-    <div class="" style="width:60%;display:flex;justify-content:center;flex-direction:column">
+    <div class="base-pokemon-detail">
   ${basePokemonHtml}
   <h5>Types</h5>
     ${pokemon.type.map((type) => {
-      return `<span style="margin-left:2em"><strong>${type}</strong></span>`;
+      return `<span class="pokemon-type"><strong>${type}</strong></span>`;
     })}
-    
     </div>
   </div>
    <div>
