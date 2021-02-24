@@ -2,17 +2,21 @@
 
 ## Set Up Locally
 
-After installing the folder , you can run the project using Live Server as shown in the image below :
+After cloning the project :
+git clone https://yourBitBucketAccount/kiitos/tap-cohort-1.git
+git fetch
+git checkout dalia-coursework-week2
+You can run the project using Live Server as shown in the image below :
 ![Set Up](./assets/setup.png)
 
 ## Code Sandbox
 
 You can view the project in CodeSandbox :
-https://codesandbox.io/s/quirky-breeze-48sbf
+https://codesandbox.io/s/stoic-hawking-zcje0
 
 ## Description
 
-Pokedex Landing Page uses Poke API which is a RESTful Pokémon API that Serves over 60,000,000 API calls each month . The Landing Page contains four Main Parts :
+Pokedex Landing Page uses fetches the data from the Restful API backend server that I built using Node JS and Express JS . The Landing Page contains four Main Parts :
 
 ## Part 1 : Header
 

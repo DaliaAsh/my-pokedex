@@ -26,16 +26,3 @@
   font-family: Montserrat;
   animation: fade ease-in 1s forwards;
 }
-.initial-pokemon {
-  font-family: Montserrat;
-  width: 10em;
-  height: auto;
-}
-#pokemon-image {
-  animation: fade ease-in 1s forwards;
-}
-@media (max-width: 680px) {
-  #pokemon-image {
-    display: none;
-  }
-}

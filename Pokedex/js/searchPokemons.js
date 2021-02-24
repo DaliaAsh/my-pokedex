@@ -13,3 +13,14 @@ function searchPokemons() {
     renderInitialPokemons(JSON.stringify(filteredPokemonsArray));
   }
 }
+document.addEventListener("DOMContentLoaded", function () {
+  loadInitialPokemons();
+  let data = {};
+  JSON.parse(localStorage.getItem("sortedPokemonsNames")).map((name) => {
+    data[name] = null;
+  });
+  let elems = document.querySelectorAll(".autocomplete");
+  let instances = M.Autocomplete.init(elems, {
+    data: data,
+  });
+});

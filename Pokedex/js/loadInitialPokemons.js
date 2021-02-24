@@ -68,6 +68,10 @@ function sortInitialPokemons(pokemonsArray) {
   const sortedPokemonsNames = pokemonsNames.sort();
   console.log(oldPokemonsNames);
   console.log(sortedPokemonsNames);
+  localStorage.setItem(
+    "sortedPokemonsNames",
+    JSON.stringify(sortedPokemonsNames)
+  );
   const pokemonsIndecies = sortedPokemonsNames.map((pokemonName) => {
     return oldPokemonsNames.indexOf(pokemonName);
   });

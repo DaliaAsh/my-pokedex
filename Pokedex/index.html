@@ -23,8 +23,9 @@
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/loadedPokemon.css" />
     <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/search.css" />
   </head>
-  <body onload="loadInitialPokemons()">
+  <body>
     <div id="details" class="modal"></div>
     <header class="header-container black">
       <div class="header-child">
@@ -72,8 +73,9 @@
           <input
             id="search-input"
             type="text"
-            class="validate"
+            class="validate autocomplete"
             oninput="searchPokemons()"
+            onchange="searchPokemons()"
             placeholder="Search"
           />
         </div>
