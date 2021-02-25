@@ -12,7 +12,7 @@ You can run the project using Live Server as shown in the image below :
 ## Code Sandbox
 
 You can view the project in CodeSandbox :
-https://codesandbox.io/s/stoic-hawking-zcje0
+https://codesandbox.io/s/condescending-elbakyan-25hbq?file=/index.html
 
 ## MVC Pattern
 
