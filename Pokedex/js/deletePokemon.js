@@ -12,8 +12,8 @@ async function deletePokemonById(id) {
   localStorage.setItem(
     "seen",
     JSON.stringify(
-      seenPokemonsIdArray.filter((id) => {
-        return id !== id;
+      seenPokemonsIdArray.filter((seenId) => {
+        return id !== seenId;
       })
     )
   );
@@ -22,8 +22,8 @@ async function deletePokemonById(id) {
   localStorage.setItem(
     "caught",
     JSON.stringify(
-      caughtPokemonsIdArray.filter((id) => {
-        return id !== id;
+      caughtPokemonsIdArray.filter((caughtId) => {
+        return id !== caughtId;
       })
     )
   );

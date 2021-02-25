@@ -13,6 +13,8 @@ function markPokemonAsSeen(id) {
     updatePokemonsStatus();
     updatePokemonToSeen(id);
     return;
+  } else {
+    updatedSeenPokemons.push(id);
   }
   localStorage.setItem("seen", JSON.stringify(updatedSeenPokemons));
   updatePokemonsStatus();

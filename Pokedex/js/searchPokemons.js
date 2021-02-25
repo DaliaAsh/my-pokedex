@@ -14,9 +14,9 @@ function searchPokemons() {
   }
 }
 document.addEventListener("DOMContentLoaded", function () {
-  loadInitialPokemons();
+  let pokemonsNames = JSON.parse(localStorage.getItem("pokemonsNames"));
   let data = {};
-  JSON.parse(localStorage.getItem("sortedPokemonsNames")).map((name) => {
+  pokemonsNames.map((name) => {
     data[name] = null;
   });
   let elems = document.querySelectorAll(".autocomplete");

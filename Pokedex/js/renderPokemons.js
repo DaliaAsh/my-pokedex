@@ -21,23 +21,14 @@ function transformPokemonsToCards(pokemonsArray) {
   document.getElementById("container").innerHTML = html;
 }
 function sortPokemons(pokemonsArray) {
-  let pokemonsNames = [];
-  pokemonsArray.map((pokemon) => {
-    pokemonsNames.push(pokemon.name);
-  });
-  const oldPokemonsNames = [...pokemonsNames];
-  const sortedPokemonsNames = pokemonsNames.sort();
-  console.log(oldPokemonsNames);
-  console.log(sortedPokemonsNames);
-  const pokemonsIndecies = sortedPokemonsNames.map((pokemonName) => {
-    return oldPokemonsNames.indexOf(pokemonName);
-  });
-  console.log(pokemonsIndecies);
-  const sortedPokemons = pokemonsIndecies.map((pokemonIndex) => {
-    return pokemonsArray[pokemonIndex];
-  });
-  console.log(sortedPokemons);
-  return sortedPokemons;
+  pokemonsArray.sort((a, b) =>
+    a.name.english > b.name.english
+      ? 1
+      : b.name.english > a.name.english
+      ? -1
+      : 0
+  );
+  return pokemonsArray;
 }
 function getRandomNumber() {
   return Math.floor(Math.random() * Math.floor(255));
