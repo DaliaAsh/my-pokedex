@@ -29,7 +29,7 @@ async function configureModal(id) {
   </div>
     <div class="base-pokemon-detail">
   ${basePokemonHtml}
-  <h5>Types</h5>
+  <h5 class="red-text">Types</h5>
     ${pokemon.type.map((type) => {
       return `<span class="pokemon-type"><strong>${type}</strong></span>`;
     })}

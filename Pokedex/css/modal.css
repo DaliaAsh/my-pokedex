@@ -27,10 +27,16 @@
 }
 .pokemon-type {
   margin-left: 2em;
+  display: block;
 }
 .base-pokemon-detail {
   width: 60%;
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+.custom-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
