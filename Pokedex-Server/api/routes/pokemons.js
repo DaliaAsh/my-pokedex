@@ -9,9 +9,17 @@ router.get("/", (req, res, next) => {
       });
       return;
     }
+    let pokemonsArray = JSON.parse(data);
+    pokemonsArray.sort((a, b) =>
+      a.name.english > b.name.english
+        ? 1
+        : b.name.english > a.name.english
+        ? -1
+        : 0
+    );
     res.status(200).json({
       message: "Handling GET Request to pokemons",
-      pokemons: JSON.parse(data),
+      pokemons: pokemonsArray,
     });
   });
 });
